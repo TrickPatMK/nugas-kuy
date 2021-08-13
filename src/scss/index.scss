@@ -16,16 +16,24 @@ nav {
   right: 0;
   background-color: whitesmoke;
   box-shadow: 0 -1px 4px grey;
+  border-radius: 25px 25px 0 0;
 
   ul {
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
 
     li a {
       color: black;
       text-decoration: none;
+    }
+
+    li #add-item {
+      border-radius: 25%;
+      margin-bottom: 5px;
     }
   }
 }
@@ -34,6 +42,15 @@ header {
   padding: 5px 0 5px 0;
   background-color: $base-color;
   box-shadow: 0px 2px 8px 2px grey;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    padding-top: 17px;
+    color: white;
+  }
 
   h1 {
     text-align: center;
@@ -50,10 +67,16 @@ header {
   padding: 20px 0 20vh 0;
 }
 
+.task-item {
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+
 .task-title {
   background-color: whitesmoke;
   padding: 10px 0 10px 0;
   box-shadow: 0px 2px 3px rgba(128, 128, 128, 0.5);
+  border-radius: 15px 15px 0 0;
   h2 {
     margin: 0;
     padding: 0 20px 0 20px;
@@ -79,6 +102,30 @@ header {
   }
 }
 
+.add-new-header {
+  margin: 15px 20px;
+  border-bottom: 1px solid grey;
+}
+
+#new-item-form {
+  padding: 0 20px 0 20px;
+
+  input,
+  textarea {
+    margin-left: 10px;
+  }
+  button#add-item {
+    position: fixed;
+    bottom: 5vh;
+    right: 8vw;
+    border-radius: 50%;
+    padding: 15px;
+    background-color: $base-color;
+    color: white;
+    border: none;
+  }
+}
+
 @media screen and (min-width: 768px) {
   body {
     background-color: $base-color;
@@ -92,7 +139,8 @@ header {
     align-items: center;
   }
 
-  main {
+  main,
+  nav {
     display: none;
   }
 }

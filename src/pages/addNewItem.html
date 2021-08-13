@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nugas Kuy</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/index.css" />
+  </head>
+  <body>
+    <!-- START: Botton-nav -->
+    <!-- END: Botton-nav -->
+    <header>
+      <a href="/index.html"><span class="material-icons"> arrow_back </span></a>
+      <h1>Nugas Kuy!</h1>
+    </header>
+
+    <div class="sorry">
+      <h1>Sorry... we only provide mobile view.</h1>
+      <p>We're still in development. Desktop view would be added future.</p>
+    </div>
+    <!-- START: content -->
+    <main>
+      <h2 class="add-new-header">Add new task</h2>
+      <form action="#" id="new-item-form">
+        <label for="lecture">Lecture: <br /> </label>
+        <input type="text" name="lecture" id="lecture" />
+
+        <br />
+
+        <label for="week">Week: <br /> </label>
+        <input type="number" name="week" id="week" />
+
+        <br />
+
+        <label for="desc">Description: <br /> </label>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+
+        <br />
+
+        <label for="criteria">Criteria: <br /> </label>
+        <textarea name="criteria" id="criteria" cols="30" rows="10"></textarea>
+
+        <br />
+
+        <label for="deadline"> Deadline: <br /> </label>
+        <input type="date" name="date" id="date" />
+        <button type="submit" id="add-item">
+          <span class="material-icons"> check </span>
+        </button>
+      </form>
+    </main>
+    <!-- END: content -->
+
+    <script src="/src/index.js"></script>
+  </body>
+</html>
