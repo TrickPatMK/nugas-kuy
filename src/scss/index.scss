@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+$base-font: "Poppins", sans-serif;
+$base-color: #0075f2;
+
+body {
+  font-family: $base-font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
+  box-shadow: 0 -1px 4px grey;
+
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    li a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+header {
+  padding: 5px 0 5px 0;
+  background-color: $base-color;
+  box-shadow: 0px 2px 8px 2px grey;
+
+  h1 {
+    text-align: center;
+    color: white;
+    margin: 0;
+  }
+}
+
+.sorry {
+  display: none;
+}
+
+.task-list {
+  padding: 20px 0 20vh 0;
+}
+
+.task-title {
+  background-color: whitesmoke;
+  padding: 10px 0 10px 0;
+  box-shadow: 0px 2px 3px rgba(128, 128, 128, 0.5);
+  h2 {
+    margin: 0;
+    padding: 0 20px 0 20px;
+    font-size: 1.3rem;
+  }
+}
+
+.task-week {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px grey;
+
+  h3 {
+    border-bottom: 1px solid grey;
+  }
+
+  .task-desc {
+    line-height: 1.2rem;
+    p {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: $base-color;
+  }
+  .sorry {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background-color: $base-color;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: none;
+  }
+}
