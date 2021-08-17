@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/css/index.css" />
   </head>
   <body>
     <!-- START: Botton-nav -->
@@ -30,6 +29,9 @@
     </nav>
     <!-- END: Botton-nav -->
     <header>
+      <a href="/index.html" id="btn-back"
+        ><span class="material-icons"> arrow_back </span></a
+      >
       <h1>Nugas Kuy!</h1>
     </header>
 
@@ -39,85 +41,11 @@
     </div>
     <!-- START: content -->
     <main>
-      <!-- <h3>There's nothing here!</h3>
-      <p>Make one now.</p> -->
-
       <div class="task-list">
-        <div class="task-item">
-          <div class="task-title">
-            <h2>Manajemen Operasional</h2>
-          </div>
-
-          <!-- START: Task description 1 -->
-          <div class="task-week">
-            <h3>Week 0</h3>
-            <div class="task-desc">
-              <h4>Task Description:</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                exercitationem illum necessitatibus quasi nobis quae animi alias
-                cumque nisi maiores.
-              </p>
-              <div class="criteria">
-                <h4>Criteria:</h4>
-                <p>time here</p>
-              </div>
-              <div class="deadline">
-                <h4>Deadline:</h4>
-                <p>date here</p>
-              </div>
-            </div>
-          </div>
-          <!-- END: Task Desctiption 1 -->
-
-          <!-- START: Task description 2 -->
-          <div class="task-week">
-            <h3>Week 1</h3>
-            <div class="task-desc">
-              <h4>Task Description:</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                exercitationem illum necessitatibus quasi nobis quae animi alias
-                cumque nisi maiores.
-              </p>
-              <div class="criteria">
-                <h4>Criteria:</h4>
-                <p>time here</p>
-              </div>
-              <div class="deadline">
-                <h4>Deadline:</h4>
-                <p>date here</p>
-              </div>
-            </div>
-          </div>
-          <!-- END: Task Desctiption 2 -->
-
-          <!-- START: Task description 3 -->
-          <div class="task-week">
-            <h3>Week 2</h3>
-            <div class="task-desc">
-              <h4>Task Description:</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                exercitationem illum necessitatibus quasi nobis quae animi alias
-                cumque nisi maiores.
-              </p>
-              <div class="criteria">
-                <h4>Criteria:</h4>
-                <p>time here</p>
-              </div>
-              <div class="deadline">
-                <h4>Deadline:</h4>
-                <p>date here</p>
-              </div>
-            </div>
-          </div>
-          <!-- END: Task Desctiption 3 -->
-        </div>
+        <task-item></task-item>
+        <add-item-form></add-item-form>
       </div>
     </main>
     <!-- END: content -->
-
-    <script src="./src/index.js"></script>
   </body>
 </html>
