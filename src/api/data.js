@@ -1,7 +1,6 @@
 const { MongoClient, Admin } = require("mongodb");
 
-const uri =
-  "mongodb+srv://admin-pat:1010789933@task.idmqb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "";
 
 const client = new MongoClient(uri);
 
