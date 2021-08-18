@@ -11,9 +11,9 @@ class AddItemForm extends HTMLElement {
     this.innerHTML = `
     <div class="wrapper">  
     <h2 class="add-new-header">Add new task</h2>
-      <form action="" id="new-item-form" method="POST">
+      <form action="/" id="new-item-form">
         <label for="lecture">Lecture: <br /> </label>
-        <input type="text" name="lecture" id="lecture" value="" />
+        <input type="text" name="lecture" id="lecture" />
 
         <br />
 
@@ -35,7 +35,7 @@ class AddItemForm extends HTMLElement {
         <label for="deadline"> Deadline: <br /> </label>
         <input type="date" name="date" id="date" value="" />
 
-        <button type="submit" id="add-new-item">
+        <button type="button" id="add-new-item">
           <span class="material-icons"> check </span>
         </button>
       </form>

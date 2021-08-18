@@ -14,8 +14,7 @@ function main() {
   }
 
   const newItem = document.getElementById("add-new-item");
-  const myform = document.querySelector("form");
-  let ITEM = {
+  let items = {
     lecture: "",
     week: "",
     desc: "",
@@ -23,7 +22,6 @@ function main() {
     deadline: "",
   };
   if (newItem) {
-    const lecture = document.querySelector("#lecture").values;
     newItem.onclick = function (e) {
       e.preventDefault();
 
@@ -31,24 +29,17 @@ function main() {
       nav.style.display = "block";
       btnBack.style.display = "none";
 
-      console.log(lecture);
-      ITEM.lecture = lecture;
-      ITEM.desc = document.getElementsByName("desc").values;
-      ITEM.criteria = document.getElementsByName("criteria").values;
-      ITEM.deadline = document.getElementsByName("deadline").values;
+      items.lecture = document.getElementsByName("lecture")[0].value;
+      items.desc = document.getElementsByName("desc")[0].value;
+      items.criteria = document.getElementsByName("criteria")[0].value;
+      items.deadline = document.getElementsByName("date")[0].value;
 
-      console.log(ITEM);
-      console.log(ITEM.lecture);
-    };
-  }
+      document.getElementsByName("lecture")[0].value = "";
+      document.getElementsByName("desc")[0].value = "";
+      document.getElementsByName("criteria")[0].value = "";
+      document.getElementsByName("date")[0].value = "yyyy-MM-dd";
 
-  if (myform) {
-    myform.onsubmit = () => {
-      const lecture = document.querySelector("#lecture").values;
-      ITEM.lecture = lecture;
-      ITEM.desc = document.getElementsByName("desc").values;
-      ITEM.criteria = document.getElementsByName("criteria").values;
-      ITEM.deadline = document.getElementsByName("deadline").values;
+      console.log(items);
     };
   }
 }
