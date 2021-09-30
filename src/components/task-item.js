@@ -13,13 +13,8 @@ class TaskItem extends HTMLElement {
     this.render();
   }
 
-  addItem(lecture, week, desc, criteria, deadline) {
-    this.lecture = lecture;
-    this.week = week;
-    this.desc = desc;
-    this.criteria = criteria;
-    this.deadline = deadline;
-    this.render();
+  get tasks(data){
+    this.task = data;
   }
 
   render() {
@@ -48,3 +43,4 @@ class TaskItem extends HTMLElement {
 }
 
 customElements.define("task-item", TaskItem);
+export default TaskItem;

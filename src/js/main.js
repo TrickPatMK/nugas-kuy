@@ -16,7 +16,7 @@ function main() {
   }
 
   const newItem = document.getElementById("add-new-item");
-  const list = document.querySelector("#task-list");
+
   // const item = document.querySelector("task-item");
 
   if (newItem) {
@@ -34,7 +34,6 @@ function main() {
       document.getElementsByName("desc")[0].value = "";
       document.getElementsByName("criteria")[0].value = "";
       document.getElementsByName("date")[0].value = "yyyy-MM-dd";
-      console.log(items);
     };
   }
 }
