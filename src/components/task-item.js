@@ -1,11 +1,6 @@
 class TaskItem extends HTMLElement {
   constructor() {
     super();
-    this.lecture = "";
-    this.week = "";
-    this.desc = "";
-    this.criteria = "";
-    this.deadline = "";
   }
 
   set data(items) {
