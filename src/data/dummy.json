@@ -1,0 +1,16 @@
+{
+  "0": {
+    "lecture": "Fisika",
+    "week": 2,
+    "desc": "Mencari telur di kali",
+    "criteria": "banyak intinya",
+    "deadline": "17/12/2021"
+  },
+  "1": {
+    "lecture": "Bahasa Jawa",
+    "week": 69,
+    "desc": "Kon bacot",
+    "criteria": "banyak intinya",
+    "deadline": "17/12/2021"
+  }
+}
