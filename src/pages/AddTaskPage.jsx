@@ -1,7 +1,8 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function AddTaskForm(props) {
+export default function AddTaskPage(props) {
   const [task, setTask] = useState({
     id: "",
     lecture: "",
@@ -10,6 +11,8 @@ export default function AddTaskForm(props) {
     criteria: "",
     deadline: "",
   });
+
+  const navigate = useNavigate();
 
   function onChangeHandler(e) {
     const changedData = e.target.name;
@@ -35,6 +38,8 @@ export default function AddTaskForm(props) {
       criteria: "",
       deadline: "",
     });
+    
+    navigate('/');
     console.log("submited");
   }
 

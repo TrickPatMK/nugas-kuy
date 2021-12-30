@@ -1,9 +1,9 @@
-import "material-icons/iconfont/filled.css";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import AddTaskForm from "./components/AddTaskForm";
 import Navbar from "./components/Navbar";
-import Task from "./components/Task";
+import AddTaskPage from "./pages/AddTaskPage";
+import Home from "./pages/Home";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -14,20 +14,15 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <AddTaskForm addTask={addTask} />
-      <div>
-        {tasks.length > 0 ? (
-          <ul>
-            {tasks.map((task) => {
-              return <li key={task.id}>{task.lecture}</li>;
-            })}
-          </ul>
-        ) : (
-          <i>tugas kosong boss</i>
-        )}
+    <>
+      <Navbar />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home data={tasks} />} />
+          <Route path="/addTask" element={<AddTaskPage addTask={addTask} />} />
+        </Routes>
       </div>
-    </div>
+    </>
   );
 }
 
