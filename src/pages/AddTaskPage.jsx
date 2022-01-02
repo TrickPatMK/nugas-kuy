@@ -3,14 +3,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function AddTaskPage(props) {
-  const [task, setTask] = useState({
+  
+
+  const taskTemplate = {
     id: "",
     lecture: "",
     week: "",
     desc: "",
     criteria: "",
     deadline: "",
-  });
+    done: false,
+  };
+  const [task, setTask] = useState(props.editTask.id ? props.editTask  : taskTemplate);
 
   const navigate = useNavigate();
 
@@ -23,81 +27,86 @@ export default function AddTaskPage(props) {
     setTask(updatedData);
   }
 
-  function onSubmitHandler(e) {
+  async function onSubmitHandler(e) {
     e.preventDefault();
 
-    const updatedTask = { ...task, id: nanoid() };
+    if (task === taskTemplate) return;
+    if(props.editTask.id) {
+      props.addTask({ ...task })
+      console.log("edit triggered")
+    } else {
+      const updatedTask = { ...task, id: nanoid() };  
+      props.addTask(updatedTask);
+      console.log("edit ignored")
+    }
 
-    props.addTask(updatedTask);
-
-    setTask({
-      id: "",
-      lecture: "",
-      week: "",
-      desc: "",
-      criteria: "",
-      deadline: "",
-    });
-    
-    navigate('/');
+    setTask({ taskTemplate });
+    navigate("/") 
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach((item) => item.classList.toggle("active"));
     console.log("submited");
   }
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <div className="form-item">
-        <label htmlFor="lecture">Lecture</label>
-        <input
-          type="text"
-          id="lecture"
-          name="lecture"
-          onChange={onChangeHandler}
-          value={task.lecture}
-        />
-      </div>
-      <div className="form-item">
-        <label htmlFor="week">Week</label>
-        <input
-          type="number"
-          id="week"
-          name="week"
-          onChange={onChangeHandler}
-          value={task.week}
-          placeholder="0"
-        />
-      </div>
-      <div className="form-item">
-        <label htmlFor="desc">Description</label>
-        <input
-          type="text"
-          id="desc"
-          name="desc"
-          onChange={onChangeHandler}
-          value={task.desc}
-          placeholder="add detail here ..."
-        />
-      </div>
-      <div className="form-item">
-        <label htmlFor="criteria">Criteria</label>
-        <input
-          type="text"
-          id="criteria"
-          name="criteria"
-          onChange={onChangeHandler}
-          value={task.criteria}
-        />
-      </div>
-      <div className="form-item">
-        <label htmlFor="deadline">Deadline</label>
-        <input
-          type="date"
-          id="deadline"
-          name="deadline"
-          onChange={onChangeHandler}
-          value={task.deadline}
-        />
-      </div>
-      <button type="submit">Save</button>
-    </form>
+    <div className="form-wrapper">
+      <h1 className="form-title">Add Task</h1>
+      <form onSubmit={onSubmitHandler} className="form">
+        <div className="form-item">
+          <label htmlFor="lecture">Lecture</label>
+          <input
+            type="text"
+            id="lecture"
+            name="lecture"
+            onChange={onChangeHandler}
+            value={task.lecture}
+          />
+        </div>
+        <div className="form-item">
+          <label htmlFor="week">Week</label>
+          <input
+            type="number"
+            id="week"
+            name="week"
+            onChange={onChangeHandler}
+            value={task.week}
+            placeholder="0"
+          />
+        </div>
+        <div className="form-item">
+          <label htmlFor="desc">Description</label>
+          <input
+            type="text"
+            id="desc"
+            name="desc"
+            onChange={onChangeHandler}
+            value={task.desc}
+            placeholder="add detail here ..."
+          />
+        </div>
+        <div className="form-item">
+          <label htmlFor="criteria">Criteria</label>
+          <input
+            type="text"
+            id="criteria"
+            name="criteria"
+            onChange={onChangeHandler}
+            value={task.criteria}
+          />
+        </div>
+        <div className="form-item">
+          <label htmlFor="deadline">Deadline</label>
+          <input
+            type="date"
+            id="deadline"
+            name="deadline"
+            onChange={onChangeHandler}
+            value={task.deadline}
+          />
+        </div>
+        <button type="submit" className="btn-submit">
+          Save
+        </button>
+      </form>
+    </div>
   );
 }
