@@ -1,0 +1,16 @@
+// component
+@use "styles/component/_navbar";
+@use "styles/component/_task";
+
+// pages
+@use "styles/pages/_home";
+@use "styles/pages/_addItem";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

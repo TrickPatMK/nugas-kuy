@@ -1,0 +1,33 @@
+.tasks {
+  padding: 0 20px;
+  padding-bottom: 20vh;
+
+  .home-title {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted black;
+  }
+
+  ul {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  & > i {
+    padding: 10px 20px;
+  }
+
+  & > ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+// responsive
+@media (min-width: 426px) {
+  .tasks {
+    padding: 0 100px;
+  }
+}
